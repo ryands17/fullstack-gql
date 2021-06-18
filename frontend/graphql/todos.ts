@@ -9,3 +9,13 @@ export const GET_TODOS = gql`
     }
   }
 `;
+
+export const ADD_TODO = gql`
+  mutation addTodo($text: String!) {
+    addTodo(text: $text) {
+      id
+      text
+      completed
+    }
+  }
+`;

@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import Fastify, { FastifyRequest, FastifyReply } from 'fastify';
+import fastifyCors from 'fastify-cors';
 import { makeExecutableSchema } from '@graphql-tools/schema';
 import mercurius from 'mercurius';
 import mercuriusCodegen from 'mercurius-codegen';
@@ -21,6 +22,8 @@ declare module 'mercurius' {
 
 // @ts-ignore
 const schema = makeExecutableSchema({ typeDefs, resolvers });
+
+app.register(fastifyCors, { origin: '*' });
 
 app.register(mercurius, {
   schema,

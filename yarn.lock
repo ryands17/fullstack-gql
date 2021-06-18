@@ -707,6 +707,17 @@
     auto-bind "~4.0.0"
     tslib "~2.2.0"
 
+"@graphql-codegen/typescript-react-apollo@2.2.5":
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-react-apollo/-/typescript-react-apollo-2.2.5.tgz#e561d77c3c1cfe32e42ab34c08d517bffc5e9f30"
+  integrity sha512-W9YI6qg6TwjD5CD+rQBmbZjwkA88MKc/9i31xvH2xGgdwzY1ybaTL10zMwsm5Ac+dOU6aCGHZVZzHd4wMrO1nw==
+  dependencies:
+    "@graphql-codegen/plugin-helpers" "^1.18.7"
+    "@graphql-codegen/visitor-plugin-common" "1.21.0"
+    auto-bind "~4.0.0"
+    change-case-all "1.0.14"
+    tslib "~2.2.0"
+
 "@graphql-codegen/typescript-resolvers@^1.19.2":
   version "1.19.2"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-resolvers/-/typescript-resolvers-1.19.2.tgz#07d97961276ef32fcd7ce10e65c09a6d91198954"
@@ -2314,6 +2325,11 @@ classnames@2.2.6:
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
 
+classnames@2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
+  integrity sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==
+
 clean-stack@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/clean-stack/-/clean-stack-2.2.0.tgz#ee8472dbb129e727b31e8a10a427dee9dfe4008b"
@@ -3230,6 +3246,14 @@ fast-safe-stringify@^2.0.7:
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/fast-safe-stringify/-/fast-safe-stringify-2.0.7.tgz#124aa885899261f68aedb42a7c080de9da608743"
   integrity sha512-Utm6CdzT+6xsDk2m8S6uL8VHxNwI6Jub+e9NYTcAms28T84pTa25GJQV9j0CY0N1rM8hK4x6grpF2BQf+2qwVA==
+
+fastify-cors@6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/fastify-cors/-/fastify-cors-6.0.1.tgz#300e0f1cbeedda19d9de284e9cf05c65842c182b"
+  integrity sha512-eeNTdQNmBsqHL87we+X74n9+H0hTDX0cXGVdyZjGf9om2pZfigAZwuSxaUUE2pLP9tp5+rEd5kejKQ8+ZCvAoA==
+  dependencies:
+    fastify-plugin "^3.0.0"
+    vary "^1.1.2"
 
 fastify-error@^0.3.0:
   version "0.3.1"
@@ -7189,6 +7213,11 @@ to-regex-range@^5.0.1:
   dependencies:
     is-number "^7.0.0"
 
+todomvc-app-css@2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/todomvc-app-css/-/todomvc-app-css-2.4.1.tgz#528b7e40a2d82e01d2756333c8ac34e23b750ff8"
+  integrity sha512-1mZYRG435VmqIw1WahBYhAJbyfH4HnRNI8EgF4ypK4R1RjwgBBvXd0N57ZwCa1lbHzYBraA6+dVyAg3GAPEACQ==
+
 toidentifier@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/toidentifier/-/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
@@ -7554,6 +7583,11 @@ value-or-promise@1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/value-or-promise/-/value-or-promise-1.0.6.tgz#218aa4794aa2ee24dcf48a29aba4413ed584747f"
   integrity sha512-9r0wQsWD8z/BxPOvnwbPf05ZvFngXyouE9EKB+5GbYix+BYnAwrIChCUyFIinfbf2FL/U71z+CPpbnmTdxrwBg==
+
+vary@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
+  integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
 
 vm-browserify@1.1.2, vm-browserify@^1.0.1:
   version "1.1.2"

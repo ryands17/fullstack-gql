@@ -1,6 +1,7 @@
 {
   "extends": "../tsconfig.base.json",
   "compilerOptions": {
+    "baseUrl": "./",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -11,6 +12,6 @@
     "resolveJsonModule": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["./"],
   "exclude": ["node_modules"]
 }

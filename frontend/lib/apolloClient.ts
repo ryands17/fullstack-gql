@@ -5,7 +5,9 @@ import isEqual from 'lodash/isEqual';
 
 export const APOLLO_STATE_PROP_NAME = '__APOLLO_STATE__';
 
-let apolloClient;
+type Client = ApolloClient<any>;
+
+let apolloClient: Client;
 
 function createApolloClient() {
   return new ApolloClient({
@@ -46,7 +48,14 @@ export function initializeApollo(initialState = null) {
   return _apolloClient;
 }
 
-export function addApolloState(client, pageProps) {
+export type ApolloState = {
+  [APOLLO_STATE_PROP_NAME]: any;
+};
+
+export function addApolloState<T>(
+  client: Client,
+  pageProps: any
+): ApolloState & { props: T } {
   if (pageProps?.props) {
     pageProps.props[APOLLO_STATE_PROP_NAME] = client.cache.extract();
   }
@@ -54,7 +63,7 @@ export function addApolloState(client, pageProps) {
   return pageProps;
 }
 
-export function useApollo(pageProps) {
+export function useApollo(pageProps: any) {
   const state = pageProps[APOLLO_STATE_PROP_NAME];
   const store = useMemo(() => initializeApollo(state), [state]);
   return store;

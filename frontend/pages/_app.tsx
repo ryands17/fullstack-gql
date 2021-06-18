@@ -1,3 +1,4 @@
+import 'todomvc-app-css/index.css';
 import { ApolloProvider } from '@apollo/client';
 import { useApollo } from '../lib/apolloClient';
 

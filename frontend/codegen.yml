@@ -2,11 +2,14 @@ overwrite: true
 schema: 'http://localhost:4000/graphql'
 documents: graphql/**/*.ts
 generates:
-  ./generated/typed-document-nodes.ts:
+  generated/query-hooks.ts:
     plugins:
       - typescript
       - typescript-operations
-      - typed-document-node
+      - typescript-react-apollo
+    config:
+      reactApolloVersion: 3
+      withHooks: true
 hooks:
   afterAllFileWrite:
     - prettier --write
