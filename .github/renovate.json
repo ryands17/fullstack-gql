@@ -1,0 +1,24 @@
+{
+  "extends": ["config:base"],
+  "masterIssue": true,
+  "automerge": true,
+  "schedule": ["every 2 months"],
+  "packageRules": [
+    {
+      "packagePatterns": ["prisma*"],
+      "groupName": "prisma"
+    },
+    {
+      "packagePatterns": ["^@types/"],
+      "groupName": "ts-types"
+    },
+    {
+      "packagePatterns": ["^jest", "ts-jest"],
+      "groupName": "test-utils"
+    },
+    {
+      "packagePatterns": ["fastify", "mercurius*"],
+      "groupName": "fastify"
+    }
+  ]
+}
