@@ -1,11 +1,34 @@
 {
   "name": "frontend",
   "version": "1.0.0",
-  "description": "",
   "scripts": {
-    "test": "echo \"todo\""
+    "dev": "run-p next generate:schema::watch",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo \"todo\"",
+    "next": "next",
+    "generate:schema": "graphql-codegen --config codegen.yml",
+    "generate:schema::watch": "yarn generate:schema -- --watch"
   },
   "keywords": [],
   "author": "Ryan",
-  "license": "ISC"
+  "dependencies": {
+    "@apollo/client": "3.1.1",
+    "deepmerge": "4.2.2",
+    "graphql": "15.5.0",
+    "lodash": "4.17.20",
+    "next": "latest",
+    "prop-types": "15.6.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@graphql-codegen/cli": "^1.21.5",
+    "@graphql-codegen/typed-document-node": "^1.18.6",
+    "@graphql-codegen/typescript": "^1.22.1",
+    "@graphql-codegen/typescript-operations": "^1.18.0",
+    "@graphql-typed-document-node/core": "^3.1.0",
+    "@types/react": "17.0.11"
+  }
 }

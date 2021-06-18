@@ -33,4 +33,4 @@ mercuriusCodegen(app, {
   targetPath: './src/graphql/generated.ts',
 }).catch(console.error);
 
-app.listen(3000, '0.0.0.0').then(() => console.log('App running on port 3000'));
+app.listen(4000, '0.0.0.0').then(() => console.log('App running on port 3000'));
