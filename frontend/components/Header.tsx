@@ -1,4 +1,5 @@
 import { useAddTodoMutation } from 'generated/query-hooks';
+import { GET_TODOS } from 'graphql/todos';
 import * as React from 'react';
 import { ENTER_KEY } from 'utils/constants';
 
@@ -13,7 +14,8 @@ const AddTodo = () => {
 
     await mutate({
       variables: { text },
-      optimisticResponse: { addTodo: { id: 'new-id', text, completed: false } },
+      refetchQueries: [{ query: GET_TODOS }],
+      awaitRefetchQueries: true,
     });
     setText('');
   };

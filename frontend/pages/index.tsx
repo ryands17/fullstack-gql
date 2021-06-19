@@ -1,7 +1,11 @@
 import * as React from 'react';
 import { ApolloQueryResult } from '@apollo/client';
 import { GetServerSideProps } from 'next';
-import { Todo, useTodosQuery } from 'generated/query-hooks';
+import {
+  Todo,
+  useClearCompletedMutation,
+  useTodosQuery,
+} from 'generated/query-hooks';
 import { GET_TODOS } from 'graphql/todos';
 import {
   initializeApollo,
@@ -12,12 +16,15 @@ import { Header } from 'components/Header';
 import { TodoItem } from 'components/TodoItem';
 import { Footer } from 'components/Footer';
 import { FILTERS, FILTER } from 'utils/constants';
+import { ToggleTodos } from 'components/ToggleTodos';
 
 type Props = ApolloState & ApolloQueryResult<{ todos: Todo[] }>;
 
 const Todos = () => {
-  let [filter, setFilter] = React.useState<FILTER>('ALL');
   let { data } = useTodosQuery();
+  let [clearCompleted] = useClearCompletedMutation();
+  let [filter, setFilter] = React.useState<FILTER>('ALL');
+  console.log({ data });
 
   let completedTodos = React.useMemo(() => {
     return data.todos.filter(t => !t.completed).length;
@@ -28,14 +35,7 @@ const Todos = () => {
       <section className="todoapp">
         <Header />
         <section className="main">
-          <input
-            id="toggle-all"
-            className="toggle-all"
-            type="checkbox"
-            readOnly
-            /* checked */
-          />
-          <label htmlFor="toggle-all" /*onClick={this.props.onCompleteAll} */ />
+          <ToggleTodos />
 
           <ul className="todo-list">
             {data.todos
@@ -53,6 +53,15 @@ const Todos = () => {
           remainingTodos={completedTodos}
           filter={filter}
           onFilterSwitch={filter => setFilter(filter)}
+          clearCompleted={() =>
+            clearCompleted({
+              variables: {
+                ids: data.todos.filter(t => t.completed).map(t => t.id),
+              },
+              refetchQueries: [{ query: GET_TODOS }],
+              awaitRefetchQueries: true,
+            })
+          }
         />
       </section>
     </div>

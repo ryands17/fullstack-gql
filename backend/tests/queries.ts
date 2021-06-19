@@ -1,4 +1,6 @@
-export const ADD_TODO = `
+import { gql } from 'mercurius-codegen';
+
+export const ADD_TODO = gql`
   mutation addTodo($text: String!) {
     addTodo(text: $text) {
       text
@@ -7,7 +9,7 @@ export const ADD_TODO = `
   }
 `;
 
-export const GET_TODOS = `
+export const GET_TODOS = gql`
   query getTodos {
     todos {
       id
@@ -17,9 +19,19 @@ export const GET_TODOS = `
   }
 `;
 
-export const UPDATE_TODO = `
+export const UPDATE_TODO = gql`
   mutation updateTodo($id: ID!, $input: UpdateTodoInput) {
     updateTodo(id: $id, input: $input) {
+      id
+      text
+      completed
+    }
+  }
+`;
+
+export const DELETE_TODO = gql`
+  mutation deleteTodo($id: ID!) {
+    deleteTodo(id: $id) {
       id
       text
       completed

@@ -38,7 +38,9 @@ export type Query = {
 export type Mutation = {
   __typename?: 'Mutation';
   addTodo: Todo;
-  updateTodo: Todo;
+  updateTodo?: Maybe<Todo>;
+  deleteTodo?: Maybe<Todo>;
+  clearCompleted?: Maybe<Scalars['Boolean']>;
 };
 
 export type MutationaddTodoArgs = {
@@ -48,6 +50,14 @@ export type MutationaddTodoArgs = {
 export type MutationupdateTodoArgs = {
   id: Scalars['ID'];
   input?: Maybe<UpdateTodoInput>;
+};
+
+export type MutationdeleteTodoArgs = {
+  id: Scalars['ID'];
+};
+
+export type MutationclearCompletedArgs = {
+  ids: Array<Scalars['ID']>;
 };
 
 export type UpdateTodoInput = {
@@ -175,8 +185,8 @@ export type ResolversTypes = {
   Mutation: ResolverTypeWrapper<{}>;
   String: ResolverTypeWrapper<Scalars['String']>;
   ID: ResolverTypeWrapper<Scalars['ID']>;
-  UpdateTodoInput: UpdateTodoInput;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
+  UpdateTodoInput: UpdateTodoInput;
   Todo: ResolverTypeWrapper<Todo>;
 };
 
@@ -186,8 +196,8 @@ export type ResolversParentTypes = {
   Mutation: {};
   String: Scalars['String'];
   ID: Scalars['ID'];
-  UpdateTodoInput: UpdateTodoInput;
   Boolean: Scalars['Boolean'];
+  UpdateTodoInput: UpdateTodoInput;
   Todo: Todo;
 };
 
@@ -209,10 +219,22 @@ export type MutationResolvers<
     RequireFields<MutationaddTodoArgs, 'text'>
   >;
   updateTodo?: Resolver<
-    ResolversTypes['Todo'],
+    Maybe<ResolversTypes['Todo']>,
     ParentType,
     ContextType,
     RequireFields<MutationupdateTodoArgs, 'id'>
+  >;
+  deleteTodo?: Resolver<
+    Maybe<ResolversTypes['Todo']>,
+    ParentType,
+    ContextType,
+    RequireFields<MutationdeleteTodoArgs, 'id'>
+  >;
+  clearCompleted?: Resolver<
+    Maybe<ResolversTypes['Boolean']>,
+    ParentType,
+    ContextType,
+    RequireFields<MutationclearCompletedArgs, 'ids'>
   >;
 };
 

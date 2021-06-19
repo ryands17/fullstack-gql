@@ -19,6 +19,15 @@ export const resolvers: IResolvers = {
         },
       });
     },
+    deleteTodo: (_parent, args, ctx) => {
+      return ctx.prisma.todo.delete({ where: { id: args.id } });
+    },
+    clearCompleted: async (_parent, args, ctx) => {
+      let data = await ctx.prisma.todo.deleteMany({
+        where: { id: { in: args.ids } },
+      });
+      return Boolean(data.count);
+    },
   },
 };
 
@@ -29,7 +38,9 @@ export const typeDefs = `
 
   type Mutation {
     addTodo(text: String!): Todo!
-    updateTodo(id: ID!, input: UpdateTodoInput): Todo!
+    updateTodo(id: ID!, input: UpdateTodoInput): Todo
+    deleteTodo(id: ID!): Todo
+    clearCompleted(ids: [ID!]!): Boolean
   }
 
   input UpdateTodoInput {

@@ -1,5 +1,5 @@
 import { getClient } from './helpers';
-import { ADD_TODO, GET_TODOS, UPDATE_TODO } from './queries';
+import { ADD_TODO, DELETE_TODO, GET_TODOS, UPDATE_TODO } from './queries';
 
 const client = getClient();
 
@@ -29,4 +29,19 @@ it('should allow editing todos', async () => {
   });
   expect(response.data.updateTodo).toBeDefined();
   expect(response.data.updateTodo).toMatchObject(input);
+});
+
+it('should delete a todo successfully', async () => {
+  let todos = await client.query(GET_TODOS);
+  let todo = todos.data.todos[0];
+
+  let response = await client.mutate(DELETE_TODO, {
+    variables: { id: todo.id },
+  });
+
+  expect(response.data.deleteTodo).toBeDefined();
+  expect(response.data.deleteTodo).toMatchObject(todo);
+
+  let newTodos = await client.query(GET_TODOS);
+  expect(newTodos.data.todos).toHaveLength(todos.data.todos.length - 1);
 });

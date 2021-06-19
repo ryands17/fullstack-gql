@@ -5,14 +5,15 @@ type Props = {
   remainingTodos: number;
   filter: FILTER;
   onFilterSwitch: (filter: FILTER) => void;
+  clearCompleted: () => void;
 };
 
-export const Footer = ({ remainingTodos, filter, onFilterSwitch }: Props) => {
+export const Footer = (props: Props) => {
   return (
     <footer className="footer">
       <span className="todo-count">
-        <strong>{remainingTodos}</strong>
-        <span>{remainingTodos === 1 ? 'item' : 'items'} left</span>
+        <strong>{props.remainingTodos} </strong>
+        <span>{props.remainingTodos === 1 ? 'item' : 'items'} left</span>
       </span>
 
       <ul className="filters">
@@ -20,15 +21,15 @@ export const Footer = ({ remainingTodos, filter, onFilterSwitch }: Props) => {
           <li key={key}>
             <a
               href="./#"
-              className={classnames({ selected: key === filter })}
-              onClick={() => onFilterSwitch(key as FILTER)}
+              className={classnames({ selected: key === props.filter })}
+              onClick={() => props.onFilterSwitch(key as FILTER)}
             >
               {val}
             </a>
           </li>
         ))}
       </ul>
-      <button className="clear-completed" onClick={() => {}}>
+      <button className="clear-completed" onClick={props.clearCompleted}>
         Clear completed
       </button>
     </footer>
