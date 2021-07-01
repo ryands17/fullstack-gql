@@ -3,6 +3,7 @@
   "masterIssue": true,
   "automerge": true,
   "schedule": ["every 2 months"],
+  "ignoreDeps": ["graphql"],
   "packageRules": [
     {
       "packagePatterns": ["prisma*"],
