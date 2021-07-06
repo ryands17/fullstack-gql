@@ -11,3 +11,4 @@ This application is a demonstration of a Full Stack GraphQL app using [Mercurius
 
 - Checkout this project
 - Run `yarn`
+- Run `yarn dev` to run the GraphQL server and Next.js app
