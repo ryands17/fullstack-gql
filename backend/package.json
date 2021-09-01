@@ -24,15 +24,15 @@
   "devDependencies": {
     "@types/jest": "26.0.24",
     "dotenv-cli": "4.0.0",
-    "jest": "27.0.6",
-    "jest-environment-node": "27.0.6",
+    "jest": "27.1.0",
+    "jest-environment-node": "27.1.0",
     "mercurius-codegen": "1.8.0",
     "mercurius-integration-testing": "3.2.0",
     "nanoid": "3.1.25",
     "nodemon": "2.0.12",
     "prisma": "2.30.2",
     "ts-eager": "2.0.2",
-    "ts-jest": "27.0.4",
+    "ts-jest": "27.0.5",
     "ts-node": "10.2.1"
   }
 }
