@@ -22,7 +22,7 @@
     "mercurius": "7.9.1"
   },
   "devDependencies": {
-    "@types/jest": "26.0.24",
+    "@types/jest": "27.0.1",
     "dotenv-cli": "4.0.0",
     "jest": "27.1.0",
     "jest-environment-node": "27.1.0",
