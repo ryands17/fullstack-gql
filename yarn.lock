@@ -3744,6 +3744,11 @@ graphql@15.5.0:
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.5.0.tgz#39d19494dbe69d1ea719915b578bf920344a69d5"
   integrity sha512-OmaM7y0kaK31NKG31q4YbD2beNYa6jBBKtMFT6gLYJljHLJr42IqJ8KX08u3Li/0ifzTU5HjmoOOrwa5BRLeDA==
 
+graphql@^15.5.1:
+  version "15.5.3"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.5.3.tgz#c72349017d5c9f5446a897fe6908b3186db1da00"
+  integrity sha512-sM+jXaO5KinTui6lbK/7b7H/Knj9BpjGxZ+Ki35v7YbUJxxdBCUqNM0h3CRVU1ZF9t5lNiBzvBCSYPvIwxPOQA==
+
 has-ansi@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/has-ansi/-/has-ansi-2.0.0.tgz#34f5049ce1ecdf2b0649af3ef24e45ed35416d91"
@@ -5354,10 +5359,10 @@ mercurius-integration-testing@3.2.0:
     get-port "^5.1.1"
     ws "^7.5.2"
 
-mercurius@8.2.0:
-  version "8.2.0"
-  resolved "https://registry.yarnpkg.com/mercurius/-/mercurius-8.2.0.tgz#2f3a437745f8d0806d84073e989eb176f18aa1d4"
-  integrity sha512-pA5Fd+jbti8ytznq1OwXDzit20Ma6aS3629i2obhhtblMOk8FFS3z8NRtNm8bdeZapdJmDsUjCEXXLuGapldjw==
+mercurius@8.2.1:
+  version "8.2.1"
+  resolved "https://registry.yarnpkg.com/mercurius/-/mercurius-8.2.1.tgz#6d9fabb0bf398a1699e58b107e426a9a9704cf54"
+  integrity sha512-ZSfSHLOROaLzj0L2VYama32sCpOpZ6WDJZ7BIqNaOmpF6Cgbgsz9hoQDOpqzBliYWfcdP50bQd+L/8fW0FjSnw==
   dependencies:
     "@types/isomorphic-form-data" "^2.0.0"
     end-of-stream "^1.4.4"
@@ -5366,6 +5371,7 @@ mercurius@8.2.0:
     fastify-plugin "^3.0.0"
     fastify-static "^4.2.2"
     fastify-websocket "^4.0.0"
+    graphql "^15.5.1"
     graphql-jit "^0.5.1"
     mqemitter "^4.4.1"
     p-map "^4.0.0"

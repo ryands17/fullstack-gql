@@ -19,7 +19,7 @@
     "fastify": "3.21.0",
     "fastify-cors": "6.0.2",
     "graphql": "15.5.0",
-    "mercurius": "8.2.0"
+    "mercurius": "8.2.1"
   },
   "devDependencies": {
     "@types/jest": "27.0.1",
