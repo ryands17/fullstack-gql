@@ -24,8 +24,8 @@
   "devDependencies": {
     "@types/jest": "27.0.1",
     "dotenv-cli": "4.0.0",
-    "jest": "27.1.0",
-    "jest-environment-node": "27.1.0",
+    "jest": "27.1.1",
+    "jest-environment-node": "27.1.1",
     "mercurius-codegen": "2.0.0",
     "mercurius-integration-testing": "3.2.0",
     "nanoid": "3.1.25",
