@@ -32,5 +32,8 @@
   },
   "lint-staged": {
     "*.{ts,tsx,json,css,md}": "prettier --write"
+  },
+  "dependencies": {
+    "graphql": "15.5.3"
   }
 }

@@ -2,7 +2,7 @@
   "extends": ["config:base"],
   "masterIssue": true,
   "automerge": true,
-  "schedule": ["every 2 months"],
+  "schedule": ["every 2 months on the 1 day of the month"],
   "ignoreDeps": ["graphql"],
   "packageRules": [
     {
@@ -18,7 +18,7 @@
       "groupName": "test-utils"
     },
     {
-      "packagePatterns": ["fastify", "mercurius*"],
+      "packagePatterns": ["fastify", "mercurius*", "graphql"],
       "groupName": "fastify"
     }
   ]
