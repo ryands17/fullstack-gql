@@ -16,7 +16,7 @@
   "dependencies": {
     "@graphql-tools/schema": "8.2.0",
     "@prisma/client": "3.0.2",
-    "fastify": "3.21.1",
+    "fastify": "3.21.2",
     "fastify-cors": "6.0.2",
     "mercurius": "8.2.1"
   },
