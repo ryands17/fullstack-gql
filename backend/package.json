@@ -28,7 +28,7 @@
     "mercurius-codegen": "3.0.0",
     "mercurius-integration-testing": "3.2.0",
     "nanoid": "3.3.3",
-    "nodemon": "2.0.15",
+    "nodemon": "2.0.16",
     "prisma": "3.10.0",
     "ts-eager": "2.0.2",
     "ts-jest": "27.1.3",
