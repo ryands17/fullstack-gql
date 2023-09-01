@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "@graphql-tools/schema": "8.2.0",
-    "@prisma/client": "4.0.0",
+    "@prisma/client": "4.16.2",
     "fastify": "3.21.2",
     "fastify-cors": "6.0.2",
     "mercurius": "8.2.1"
@@ -29,7 +29,7 @@
     "mercurius-integration-testing": "3.2.0",
     "nanoid": "3.3.6",
     "nodemon": "2.0.22",
-    "prisma": "4.0.0",
+    "prisma": "4.16.2",
     "ts-eager": "2.0.2",
     "ts-jest": "27.1.5",
     "ts-node": "10.9.1"
